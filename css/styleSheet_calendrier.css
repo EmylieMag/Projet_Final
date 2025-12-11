@@ -1,0 +1,103 @@
+.calendarContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+}
+
+.monthBox {
+    align-content: space-around;
+    margin: 5px;
+    max-width: 260px;
+    height: 235px;
+    border-radius: 10px;
+    border: 2px solid lightgray;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.longTitle {
+    display: block;
+    margin: auto;
+    width: 128px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.smallTitle {
+    display: block;
+    margin: auto;
+    width: 70px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.dayOfWeek {
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+
+    .dayBox {
+        flex: auto;
+        font-weight: bold;
+        font-size: small;
+    }
+}
+
+.numberContainer {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin: 3px;
+    justify-items: center;
+    gap: 5px;
+
+    .numberBox {
+        font-size: 16px;
+    }
+
+    .numberHidden {
+        font-size: 16px;
+        visibility: hidden;
+    }
+}
+
+
+.toolTip {
+    cursor: pointer;
+    position: relative;
+    display: inline;
+    color: gold;
+}
+
+.toolTipText {
+    visibility: hidden;
+    position: absolute;
+    width: 130px;
+    color: black;
+    border: 1px solid lightgray;
+    background-color: aliceblue;
+    text-align: center;
+    padding: 5px;
+    z-index: 999;
+}
+
+.toolTip:hover .toolTipText {
+    visibility: visible;
+
+}
+
+@media screen and (max-width: 900px) {
+    .calendarContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 700px){
+    .calendarContainer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px){
+    .calendarContainer{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

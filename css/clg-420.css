@@ -1,0 +1,63 @@
+:root {
+    --duration: 0.75s;
+    --detailsPadding: 25px;
+    interpolate-size: allow-keywords;
+}
+
+summary {
+    cursor: pointer;
+    font-size: 2em;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 98%;
+    height: 60px;
+    padding: 4px;
+    align-content: center;
+    background-color: lightgray;
+    border-radius: 10px;
+    font-family: monospace;
+    font-weight: bold;
+
+    /* À compléter */
+    &::marker {
+        font-size: 1.0em;
+    }
+}
+
+details {
+    div {
+        font-size: 2em;
+        margin: auto;
+        width: 98%;
+        padding: 4px;
+        align-content: center;
+        font-family: monospace;
+        /* À compléter */
+    }
+
+    span {
+        /* À compléter */
+        margin: auto;
+        width: 98%;
+        padding: 4px;
+        align-content: center;
+        font-family: monospace;
+        color: dodgerblue;
+    }
+
+    &::details-content {
+        opacity: 0;
+        block-size: 0;
+        overflow-y: clip;
+        transition:
+            /* paramètres de l'animation */
+            content-visibility var(--duration) allow-discrete,
+            opacity var(--duration),
+            block-size var(--duration);
+    }
+
+    &[open]::details-content {
+        opacity: 1;
+        block-size: auto;
+    }
+}
